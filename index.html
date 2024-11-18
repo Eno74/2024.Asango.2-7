@@ -1,99 +1,136 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2-7 뉴스</title>
+    <title>실시간 학교 급식 메뉴 및 뉴스</title>
     <style>
-        * {
-            box-sizing: border-box;
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f9;
+            flex-direction: column;
         }
-
-        body {
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 20px;
-        }
-
         .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
+            width: 90%;
+            max-width: 500px;
+            background-color: #ffffff;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            text-align: center;
         }
-
-        h1, h2 {
-            margin-bottom: 15px;
-            color: #444;
-        }
-
-        section {
+        h1 {
+            font-size: 24px;
             margin-bottom: 20px;
         }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        li {
+        .date-info {
+            font-size: 18px;
             margin-bottom: 10px;
+            color: #333;
         }
-
-        a {
+        .menu-container, .task-container, .news-container {
+            margin-bottom: 20px;
+        }
+        .menu-list, .task-list, .news-list {
+            list-style: none;
+            padding: 0;
+        }
+        .menu-item, .task-item, .news-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu-item:last-child, .task-item:last-child, .news-item:last-child {
+            border-bottom: none;
+        }
+        .news-container a {
             color: #0066cc;
             text-decoration: none;
         }
-
-        a:hover {
+        .news-container a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>아산고등학교 2-7</li></h1>
-        <h1>11월 6일 | 시험까지 D-Day 41</h1>
-        <section class="schedule">
-            <h2>급식</h2>
-            <ul>
-                <li>현미밥</li>
-                <li>부대찌개 (1,2,5,6,9,10,12,15)</li>
-                <li>오리불고기 (2)</li>
-                <li>돼지고기육전 (1,5,6,10,15,18)</li>
-                <li>쥐포채볶음 (1,5)</li>
-                <li>배추김치 (9)</li>
-                <li>파인애플, 황도</li>
+        <div class="date-info" id="dateInfo"></div>
+        <div class="menu-container">
+            <h1>오늘의 급식 메뉴</h1>
+            <ul class="menu-list" id="menuList">
+                <li class="menu-item">로딩 중...</li>
             </ul>
-        </section>
-        <section class="tasks">
-            <h2>과제 및 일정</h2>
-            <ul>
-                <li>독서: 본 책 수행평가 11/11~12 예정</li>
-                <li>부 책 독후감 리로스쿨 제출 ~11/8 17:00</li>
-                <li>영어: 클래스카드 ~11/21 4교시</li>
-                <li>수학: 주제탐구 보고서 ~11/25 00:00</li>
-                <li>확통: 주제탐구 보고서 ~11/18 00:00</li>
-                <li>진로: 독후감, 직업인 인터뷰 최대한 빨리 마무리</li>
-                <li>주제탐구 보고서 담주 화요일까지 1~20번</li>
+            <br>
+        </div>
+        <div class="news-container">
+            <h1>뉴스 논평 콘테스트</h1>
+            <p>아래 뉴스를 읽고 논평을 제출해 주세요!</p>
+            <br>
+            <br>
+            <ul class="news-list">
+                <li class="news-item"><a href="https://www.koti.re.kr/user/bbs/saopNewsView.do?bbs_no=55731#:~:text=%23%20딜레마%20상황에%20대비한%20자율주행차의%20윤리%20알고리즘,윤리적%20딜레마는%20어떤%20것이%20있는지%20함께%20알아봅시다!" target="_blank">윤리적 딜레마에 빠진 자율주행차</a></li>
+                <li class="news-item"><a href="https://naver.me/58NaNDrb" target="_blank">논평 제출하기</a></li>
+                <li class="news-item">우수자를 선정해(2명) 간식을 드립니다</li>
+                <br><br>
             </ul>
-        </section>
-        <section class="news">
-            <h2>뉴스</h2>
-            <ul>
-                <li><a href="https://www.itworld.co.kr/news/310576" target="_blank">가트너, '2024년 기업이 주목해야 할 10대 전략 기술 트렌드' 발표</a></li>
-                <li><a href="https://www.khan.co.kr/national/education/article/202411011717001" target="_blank">서울시, 내년 AI 교과서 전면도입 할 듯 “예산 모두 편성”</a></li>
-                <li><a href="https://naver.me/FTXHIBYx" target="_blank">에너지 신기술 한눈에 ‘빅스포 2024’</a></li>
-                <li><a href="https://m.mk.co.kr/news/economy/11157195" target="_blank">“이러다 정말 못 타는거 아냐”…국민연금 가입자 올 들어 40만명 ‘뚝’ 무슨 일?</a></li>
-            </ul>
-        </section>
+        </div>
+        <div>
+            <br><br><br>
+            <l>2-7 행정안전부</l>
+        </div>
     </div>
+
+    <script>
+        function displayDateInfo() {
+            const today = new Date();
+            const examDate = new Date(today.getFullYear(), 11, 17); // 기말고사: 12월 17일
+
+            const todayStr = today.toLocaleDateString("ko-KR");
+            const dDay = Math.ceil((examDate - today) / (1000 * 60 * 60 * 24));
+
+            const dateInfo = `${todayStr} | 기말고사까지 D-Day ${dDay}일`;
+            document.getElementById("dateInfo").textContent = dateInfo;
+        }
+
+        async function fetchMealData() {
+            const apiKey = "c732ee75a9cb4d72b2f80cb2ba78dbfc"; // 발급받은 API 키
+            const offset = new Date().getTimezoneOffset() * 60000;
+            const today = new Date(Date.now() - offset).toISOString().split("T")[0].replace(/-/g, "");
+            const url = `https://open.neis.go.kr/hub/mealServiceDietInfo?ATPT_OFCDC_SC_CODE=N10&SD_SCHUL_CODE=8140096&MLSV_YMD=${today}&KEY=${apiKey}&Type=json`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.mealServiceDietInfo && data.mealServiceDietInfo.length > 1 && data.mealServiceDietInfo[1].row && data.mealServiceDietInfo[1].row.length > 0) {
+                    const mealData = data.mealServiceDietInfo[1].row[1].DDISH_NM.split("<br/>");    
+                    const menuList = document.getElementById("menuList");
+                    menuList.innerHTML = ""; // 기존 목록 초기화
+
+                    mealData.forEach(menuItem => {
+                        const li = document.createElement("li");
+                        li.className = "menu-item";
+                        li.textContent = menuItem;
+                        menuList.appendChild(li);
+                    });
+                } else {
+                    console.error("급식 데이터가 없습니다.");
+                    document.getElementById("menuList").innerHTML = "<li class='menu-item'>급식 데이터가 없습니다.</li>";
+                }
+            } catch (error) {
+                console.error("급식 정보를 가져오는 중 오류가 발생했습니다:", error);
+                document.getElementById("menuList").innerHTML = "<li class='menu-item'>급식 정보를 가져오는 중 오류가 발생했습니다.</li>";
+            }
+        }
+
+        displayDateInfo();
+        fetchMealData();
+    </script>
 </body>
 </html>
